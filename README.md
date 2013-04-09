@@ -7,12 +7,7 @@ Download compiler from [compiler link](http://www.haskell.org/platform/)
 
 Usage:
 ------
-open command line  
-
-`ghci`  
-
-`:l hichachoe.hs`  
-
-`play1P | play1PSecond | play2P | playAI`  
-
-
+open command line then run the following command  
+1. Run the GH compiler: `ghci`  
+2. Load the hichachoe code: `:l hichachoe.hs`  
+3. Run any of these commands to play: `play1P | play1PSecond | play2P | playAI`  
