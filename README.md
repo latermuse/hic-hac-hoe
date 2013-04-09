@@ -7,7 +7,12 @@ Download compiler from [compiler link](http://www.haskell.org/platform/)
 
 Usage:
 ------
-open command line
-`ghci`
-`:l hichachoe.hs`
-`play1P | play1PSecond | play2P | playAI`
+open command line  
+
+`ghci`  
+
+`:l hichachoe.hs`  
+
+`play1P | play1PSecond | play2P | playAI`  
+
+
