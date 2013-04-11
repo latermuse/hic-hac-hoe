@@ -4,6 +4,7 @@ module Main where
     import Data.Maybe (isNothing, isJust, fromJust)
     import Control.Applicative
     import Data.Function (on)
+    import System.IO
 
     --Strings
     helpForHumans :: String
@@ -44,7 +45,7 @@ module Main where
 
     -- Play a standard game of tic-tac-toe against an AI opponent
     main :: IO ()
-    main = gameLoop
+    main = hSetBuffering stdin NoBuffering >> gameLoop
 
     play1P :: IO ()
     play1P = play1PFirst
