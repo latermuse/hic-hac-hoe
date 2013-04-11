@@ -44,13 +44,21 @@ module Main where
 
     -- Play a standard game of tic-tac-toe against an AI opponent
     main :: IO ()
-    main = play1P
+    main = gameLoop
+
     play1P :: IO ()
     play1P = play1PFirst
     play1PFirst :: IO ()
     play1PFirst = playChoose (Human (Just 'X')) (AI hardAIBrain (Just 'O'))
     play1PSecond :: IO ()
     play1PSecond = playChoose (AI hardAIBrain (Just 'O')) (Human (Just 'X'))
+
+    -- Clear screen
+    clearScreen :: IO ()
+    clearScreen = putStr "\ESC[H\ESC[J"
+
+    -- Single player game loop
+    gameLoop = clearScreen >> play1PFirst
 
     -- Play a human vs human game of tic-tac-toe
     play2P :: IO ()
@@ -172,7 +180,7 @@ module Main where
 
     -- prints out a String representation of a Board
     prtBoard :: Board -> IO ()
-    prtBoard bd = putStrLn (boardToStr bd)
+    prtBoard bd = clearScreen >> putStrLn (boardToStr bd)
         where
             -- converts board to string
             boardToStr :: Board -> String
